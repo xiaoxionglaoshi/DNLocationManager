@@ -18,9 +18,15 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        DNLocationManager.shared.getCity { (city) in
-//            print(city)
-//        }
+        DNLocationManager.shared.getUserCLLocationAndCity(cllocation: { (cllocation) in
+            print(cllocation?.coordinate.latitude, cllocation?.coordinate.longitude)
+            }, city: { (city) in
+                print(city)
+            }, cllocationError: { (error) in
+                print("cllocationerror:\(error)")
+            }) { (error) in
+                print("cityerror:\(error)")
+        }
         
     }
 
