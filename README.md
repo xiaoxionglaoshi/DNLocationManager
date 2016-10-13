@@ -5,7 +5,7 @@
 ```
 DNLocationManager.shared.getCity(city: { (city) in
             print(city)
-            }) { (error) in
-                print("获取城市失败")
-        }
+   }) { (error) in
+           print("获取城市失败")
+ }
 ```
